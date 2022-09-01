@@ -26,7 +26,7 @@ Their is also the ability to apply and join the community of creators to share y
 
 #### **_Wireframe_** ####
 
-Link: 
-Link: 
+Link: [Trello] (https://trello.com/b/u7uTd2AC/present)
+Link: [Figma] (https://www.figma.com/file/CbmismMhLIEY5Zn4Qg2Tge/preSent?node-id=0%3A1)
 
 ![Screenshot](./screenshot.PNG)
