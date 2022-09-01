@@ -27,4 +27,4 @@ Their is also the ability to apply and join the community of creators to share y
 Link: 
 Link: 
 
-![Screenshot](ScreenShot.png)
+![Screenshot](screenshot.png)
