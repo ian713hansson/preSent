@@ -21,6 +21,8 @@ Their is also the ability to apply and join the community of creators to share y
  - Python
  - Figma
  - Trello
+ - Gimp
+ - StudioOne
 
 #### **_Wireframe_** ####
 
