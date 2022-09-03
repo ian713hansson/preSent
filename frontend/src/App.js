@@ -4,13 +4,13 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 function App() {
-  const [posts, setPosts] = useState([])
+  const [post, setPosts] = useState([])
   useEffect(()=>{
     const getPosts = async () => {
       const res = await axios.get('http://localhost:8000/post/')
-      console.log(res.data.posts)
-      setPosts(res.data.posts)
-      console.log(posts)
+      console.log(res.data.post)
+      setPosts(res.data.post)
+      console.log(post)
     }
     getPosts()
   }, []) 

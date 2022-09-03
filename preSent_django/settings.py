@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'preSent',
-    'rest_framework'
+    'rest_framework',
     'corsheaders',
 ]
 
@@ -60,7 +60,6 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
-    'http://localhost:8000/post',
 ]
 
 CORS_ALLOW_METHODS = [
