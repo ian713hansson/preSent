@@ -1,0 +1,3 @@
+CREATE DATABASE preSent;
+CREATE USER preSentuser WITH PASSWORD 'preSent';
+GRANT ALL PRIVILEGES ON DATABASE preSent TO preSentuser;
