@@ -9,9 +9,7 @@ function App() {
   useEffect(()=>{
     const getPosts = async () => {
       let res = await axios.get('http://localhost:8000/api/post/')
-
       console.log(res.data)
-      console.log('this works?')
       setPosts(res.data)
     }
     getPosts()
@@ -20,6 +18,8 @@ function App() {
 
   return (
     <div className="App">
+      <h1>posts here
+      </h1>
       <PostList />
     </div>
   );

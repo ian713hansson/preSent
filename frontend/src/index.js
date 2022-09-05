@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import Login from './components/Login'
+import Posts from './pages/Posts';
 
 
 function Router(){
@@ -12,7 +13,7 @@ function Router(){
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/posts' element={<App />} />
+        <Route path='/posts' element={<Posts />} />
       </Routes>
     </BrowserRouter>
   )
