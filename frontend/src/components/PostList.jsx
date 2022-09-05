@@ -29,11 +29,12 @@ const PostList = (props) => {
             <h2>{props.title}</h2>
             <p>{props.description}</p>
             <h3>{props.file}</h3>
+            <h4>{props.creator}</h4>
             <div className='review-form'>
             <form onSubmit={handleComment}>
                 <label htmlFor='review'>Tell us your thoughts</label>
-                <textarea id='review' cols='80' rows='10'onChange={handleChange} value={formState.review}></textarea>
-                <button type='review'>Review</button>
+                <textarea id='review' cols='40' rows='5'onChange={handleChange} value={formState.comment}></textarea>
+                <button type='review'>Leave a Comment</button>
             </form>
         </div>
 

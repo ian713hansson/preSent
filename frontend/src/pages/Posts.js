@@ -16,16 +16,17 @@ function Posts () {
 
       return (
         <div className="App">
-          <h1>posts here </h1>
+          <h1>Post Feed</h1>
           <section className='post_grid'>
             {post.map((post)=>(
                 <div>
                     <PostList 
                         key={post.title}
-                        id={post._id}
+                        id={post.id}
                         title={post.title}
                         description={post.description}
                         file={post.file}
+                        creator={post.creator}
                         comment={post.comment}
                         />
                 </div>
