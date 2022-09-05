@@ -5,15 +5,17 @@ import axios from 'axios'
 
 function App() {
   const [post, setPosts] = useState([])
+
   useEffect(()=>{
     const getPosts = async () => {
-      const res = await axios.get('http://localhost:8000/post/')
-      console.log(res.data.post)
-      setPosts(res.data.post)
-      console.log(post)
+      let res = await axios.get('http://localhost:8000/api/post/')
+
+      console.log(res.data)
+      console.log('this works?')
+      setPosts(res.data)
     }
     getPosts()
-  }, []) 
+  }) 
 
 
   return (
