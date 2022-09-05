@@ -15,7 +15,7 @@ function App() {
       setPosts(res.data)
     }
     getPosts()
-  }) 
+  }, []) 
 
 
   return (
