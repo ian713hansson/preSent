@@ -1,9 +1,38 @@
-const Creator = () => {
-    return (
-        <div className="creators">
-            <h1>Creator profiles here</h1>
-        </div>
-    )
-}
+import CreatorList from '../components/CreatorList'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
-export default Creator
+function Creators () {
+    const [creator, setCreators] = useState([])
+
+    useEffect(()=>{
+        const getCreators = async () => {
+          let res = await axios.get('http://localhost:8000/api/creator/')
+          console.log(res.data)
+          setCreators(res.data)
+        }
+        getCreators()
+      }, []) 
+
+      return (
+        <div className="App">
+          <h1>Our Creators</h1>
+          <section className='creator_grid'>
+            {creator.map((creator)=>(
+                <div>
+                    <CreatorList 
+                        key={creator.name}
+                        id={creator.id}
+                        name={creator.name}
+                        about={creator.about}
+                        location={creator.location}
+                        />
+                </div>
+            ))}
+          </section>
+          
+        </div>
+      );
+    }
+
+export default Creators
