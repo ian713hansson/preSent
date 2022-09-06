@@ -2,6 +2,32 @@
   text-align: center;
 }
 
+.header {
+  background-color: rgb(245, 214, 153);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  outline: 2px solid
+}
+
+.nav_links{
+  margin: 0px 50px 10px 50px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10%;
+  background-image: url('https://www.arover.net/wp-content/uploads/2022/06/The-first-real-images-of-the-James-Webb-space-telescope-will.jpg');
+  align-items: center;
+  text-align: center;
+  color: antiquewhite;
+  text-shadow: 1px 1px black;
+}
+
 .post_list{
   display: flex;
   flex-direction: column;

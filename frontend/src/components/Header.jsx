@@ -7,11 +7,13 @@ const Header = () => {
         <div className='header'>
             <h1>preSent</h1>
             <h4>A Cyber Sangha for inhabitants of the fringe</h4>
-        </div>
-      <nav className='nav'>
-        <Link to="/">Home</Link>
-        <Link to="/posts">Posts</Link>
-      </nav>
+        <div className='nav_header'>
+            <nav>
+                <Link className='nav_links' to="/">Home</Link>
+                <Link className='nav_links' to="/posts">Posts</Link>
+            </nav>
+        </div>    
+      </div>
     </header>
   )
 }
