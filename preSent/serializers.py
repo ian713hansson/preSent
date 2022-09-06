@@ -2,15 +2,15 @@ from rest_framework import serializers
 from .models import Creator, DailyWords, Post, User, Comment 
 
 class CreatorSerializer(serializers.HyperlinkedModelSerializer):
-    posts = serializers.HyperlinkedRelatedField(
-        view_name='post_detail',
+    posts = serializers.SlugRelatedField(
+        read_only=True,
         many=True,
-        read_only=True
+        slug_field='title'
     )
-    daily_words = serializers.HyperlinkedRelatedField(
-        view_name='daily_words_detail',
+    daily_words = serializers.SlugRelatedField(
         many=True,
-        read_only=True
+        read_only=True,
+        slug_field='body'
     )    
     class Meta:
         model = Creator
