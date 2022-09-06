@@ -27,29 +27,29 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('id', 'name', 'email', 'password', 'profile_pic', 'comment')
 
-
-class PostSerializer(serializers.HyperlinkedModelSerializer):
-    creator = serializers.HyperlinkedRelatedField(
-        view_name='creator_detail',
-        read_only=True
-    )
-    class Meta:
-        model = Post
-        fields = ('id', 'title', 'description', 'file', 'creator')
-
-
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
-    user = serializers.HyperlinkedRelatedField(
-        view_name='user_detail',
-        read_only=True
+    user = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='name'
     )
-    post = serializers.HyperlinkedRelatedField(
-        view_name='post_detail',
-        read_only=True
+    post = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='title'
     )
     class Meta:
         model = Comment
         fields = ('id', 'title', 'body', 'user', 'post')
+
+class PostSerializer(serializers.HyperlinkedModelSerializer):
+    creator = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='name'
+    )
+    comment = CommentSerializer(many=True, read_only=True)
+    
+    class Meta:
+        model = Post
+        fields = ('id', 'title', 'description', 'file', 'creator', 'comment')
 
 
 class DailyWordsSerializer(serializers.HyperlinkedModelSerializer):

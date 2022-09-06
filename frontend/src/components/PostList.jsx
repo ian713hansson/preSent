@@ -29,7 +29,11 @@ const PostList = (props) => {
             <h2>{props.title}</h2>
             <p>{props.description}</p>
             <h3>{props.file}</h3>
-            <h4>{props.creator}</h4>
+            <h4>Posted by: {props.creator}</h4>
+            {props.comment.map(comment => 
+            <h5 className="post_comment">{comment.title}: {comment.body}-{comment.user}</h5>
+            )}
+            
             <div className='review-form'>
             <form onSubmit={handleComment}>
                 <label htmlFor='review'>Tell us your thoughts</label>

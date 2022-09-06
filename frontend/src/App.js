@@ -1,28 +1,24 @@
 import './App.css';
-import PostList from './components/PostList'
-import {useState, useEffect} from 'react'
-import axios from 'axios'
+import { Route, Routes } from 'react-router-dom'
+import Posts from './pages/Posts';
+import Home from './pages/Home'
+import Header from './components/Header';
 
 function App() {
-  const [post, setPosts] = useState([])
-
-  useEffect(()=>{
-    const getPosts = async () => {
-      let res = await axios.get('http://localhost:8000/api/post/')
-      console.log(res.data)
-      setPosts(res.data)
-    }
-    getPosts()
-  }, []) 
-
-
   return (
-    <div className="App">
-      <h1>posts here
-      </h1>
-      <PostList />
+    <div>
+      <Header />
+    <main>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/posts' element={<Posts />} />
+      </Routes>
+    </main>
     </div>
-  );
+  )
 }
+
+
+
 
 export default App;

@@ -3,27 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Route, BrowserRouter, Routes } from 'react-router-dom'
-import Login from './components/Login'
-import Posts from './pages/Posts';
-
-
-function Router(){
-  return(
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/posts' element={<Posts />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router />
+    <Router>
+      <App />
+    </Router>
+
   </React.StrictMode>
 );
 
