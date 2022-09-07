@@ -28,7 +28,7 @@ const PostList = (props) => {
         <div className="post_list" onClick={(props.onClick)}>
             <h2>{props.title}</h2>
             <p>{props.description}</p>
-            <h3>{props.file}</h3>
+            <img src = {props.image}/>
             <h4>Posted by: {props.creator}</h4>
             {props.comment.map(comment => 
             <h5 className="post_comment">{comment.title}: {comment.body}-{comment.user}</h5>

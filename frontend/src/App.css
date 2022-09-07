@@ -37,3 +37,11 @@
 .post_comment{
   outline: 1px solid grey;
 }
+
+.creator_list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin-left: 30vw;
+}

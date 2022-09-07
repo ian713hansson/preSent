@@ -25,7 +25,7 @@ function Posts () {
                         id={post.id}
                         title={post.title}
                         description={post.description}
-                        file={post.file}
+                        image={post.image}
                         creator={post.creator}
                         comment={post.comment}
                         />

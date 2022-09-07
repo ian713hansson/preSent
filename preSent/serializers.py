@@ -18,10 +18,10 @@ class CreatorSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    comment = serializers.HyperlinkedRelatedField(
-        view_name='comment_detail',
+    comment = serializers.SlugRelatedField(
         many=True,
-        read_only=True
+        read_only=True,
+        slug_field='title'
     )
     class Meta:
         model = User
@@ -49,13 +49,13 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = Post
-        fields = ('id', 'title', 'description', 'file', 'creator', 'comment')
+        fields = ('id', 'title', 'description', 'image', 'creator', 'comment')
 
 
 class DailyWordsSerializer(serializers.HyperlinkedModelSerializer):
-        creator = serializers.HyperlinkedRelatedField(
-            view_name='creator_detail',
-            read_only=True
+        creator = serializers.SlugRelatedField(
+            read_only=True,
+            slug_field='name'
         )
         class Meta:
             model = DailyWords

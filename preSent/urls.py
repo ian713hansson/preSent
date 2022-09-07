@@ -15,5 +15,5 @@ urlpatterns = [
     path('user/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
     path('post/<int:pk>', views.PostDetail.as_view(), name='post_detail'),
     path('comment/<int:pk>', views.CommentDetail.as_view(), name='comment_detail'),
-    path('daily_words/<int:pk>', views.DailyWordsDetail.as_view(), name='daily_words_detail')
+    path('daily_words/<int:pk>', views.DailyWordsDetail.as_view(), name='daily_words_detail'),
 ]

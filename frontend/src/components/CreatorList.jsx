@@ -5,9 +5,9 @@ const CreatorList = (props) => {
     console.log(props)
 
     return (
-        <div className="post_list" onClick={(props.onClick)}>
+        <div className="creator_list" onClick={(props.onClick)}>
             <h2>{props.name}</h2>
-            <p>{props.about}</p>
+            <p className="creator_about">{props.about}</p>
             <h3>{props.location}</h3>
 
         </div>
