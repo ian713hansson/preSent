@@ -45,7 +45,7 @@
 }
 
 .post_img{
-  width: 800px;
+  max-width: 500px;
   height: auto;
 }
 
