@@ -32,16 +32,47 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  outline: 1px solid rgb(241, 180, 26);
+  padding: 15px;
 }
 
 .post_comment{
   outline: 1px solid grey;
+  background-color: rgb(243, 201, 94);
+  padding: 5px;
+  width: 600px;
 }
 
-.creator_list{
+.post_img{
+  width: 800px;
+  height: auto;
+}
+
+.comment_form{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.comment_btn{
+  margin-left: 215px;
+}
+
+.creator_grid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator_about{
+  width: 600px;
+}
+
+.profile_pic{
+  border-radius: 50%;
   width: 400px;
-  margin-left: 30vw;
+  height: auto;
 }

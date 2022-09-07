@@ -26,6 +26,7 @@ function Creators () {
                         name={creator.name}
                         about={creator.about}
                         location={creator.location}
+                        profile_pic={creator.profile_pic}
                         />
                 </div>
             ))}

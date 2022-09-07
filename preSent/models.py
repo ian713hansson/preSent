@@ -8,7 +8,7 @@ class Creator(models.Model):
     about = models.TextField()
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    profile_pic = models.FileField(upload_to='creator/', default='no profile picture')
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return self.name
@@ -19,7 +19,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    profile_pic = models.FileField(upload_to='user/', default='no profile picture')
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return self.name
@@ -29,6 +29,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(null=True, blank=True, upload_to="images/")
+    file = models.FileField(null=True, blank=True, upload_to="media/")
 
     def __str__(self):
         return self.title

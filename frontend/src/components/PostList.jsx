@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 import axios from "axios"
+import ReactAudioPlayer from 'react-audio-player'
+
+
 
 const PostList = (props) => {
     console.log(props)
@@ -28,17 +31,20 @@ const PostList = (props) => {
         <div className="post_list" onClick={(props.onClick)}>
             <h2>{props.title}</h2>
             <p>{props.description}</p>
-            <img src = {props.image}/>
+            <img className="post_img" src = {props.image}/>
             <h4>Posted by: {props.creator}</h4>
             {props.comment.map(comment => 
-            <h5 className="post_comment">{comment.title}: {comment.body}-{comment.user}</h5>
+            <h5 className="post_comment">{comment.title}: {comment.body} -{comment.user}</h5>
             )}
-            
-            <div className='review-form'>
-            <form onSubmit={handleComment}>
-                <label htmlFor='review'>Tell us your thoughts</label>
-                <textarea id='review' cols='40' rows='5'onChange={handleChange} value={formState.comment}></textarea>
-                <button type='review'>Leave a Comment</button>
+            <ReactAudioPlayer
+            src={props.file}
+            controls
+            />
+            <div >
+            <form className='comment_form' onSubmit={handleComment}>
+                <label htmlFor='comment'>Tell us your thoughts</label>
+                <textarea id='comment' cols='40' rows='5'onChange={handleChange} value={formState.comment}></textarea>
+                <button className="comment_btn" type='comment'>Leave a Comment</button>
             </form>
         </div>
 
