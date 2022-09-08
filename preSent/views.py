@@ -2,6 +2,11 @@ from django.shortcuts import render
 from .serializers import CommentSerializer, CreatorSerializer, DailyWordsSerializer, PostSerializer, UserSerializer
 from .models import Creator, User, Post, Comment, DailyWords
 from rest_framework import generics
+# trying post
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
 
 
 # List views...
@@ -49,3 +54,14 @@ class DailyWordsDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DailyWordsSerializer
 
 # Create your views here.
+@api_view(['POST'])
+def createPost(request):
+    
+    data = request.data
+    
+    post = Post.objects.create(
+        title=data['title']
+    )
+    
+    serializer = PostSerializer(post, many=False)
+    return Response(serializer.data)

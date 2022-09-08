@@ -60,3 +60,8 @@ class DailyWordsSerializer(serializers.HyperlinkedModelSerializer):
         class Meta:
             model = DailyWords
             fields = ('id', 'name', 'body', 'creator')
+
+# class CreatePostSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Post
+#         fields = ('title', 'image', 'file', 'description')

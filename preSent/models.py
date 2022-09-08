@@ -25,7 +25,7 @@ class User(models.Model):
         return self.name
 
 class Post(models.Model):
-    creator = models.ForeignKey(Creator, on_delete=models.CASCADE, related_name='posts')
+    # creator = models.ForeignKey(Creator, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(null=True, blank=True, upload_to="images/")
