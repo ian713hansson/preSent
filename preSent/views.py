@@ -68,3 +68,18 @@ def createPost(request):
     
     serializer = PostSerializer(post, many=False)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def deletePost(request):
+    
+    data = request.data
+    
+    post = Post.objects.delete(
+        title=data['title'],
+        description=data['description'],
+        image=data['image'],
+        file=data['file']
+    )
+    
+    serializer = PostSerializer(post, many=False)
+    return Response(serializer.data)

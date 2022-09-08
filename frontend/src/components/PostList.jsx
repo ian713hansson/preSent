@@ -9,6 +9,7 @@ const PostList = (props) => {
 
     const [formState, setFormState] = useState('')
 
+
     const handleChange = event => {
         setFormState({ ...formState, [event.target.id]:
         event.target.value })
@@ -27,6 +28,14 @@ const PostList = (props) => {
         }
     }
 
+    const deletePost = async (id) => {
+        console.log('hello', props.id, props.title)
+        await axios.delete(`http://localhost:8000/api/post/${props.id}`)
+        
+        console.log('post deleted')
+        
+    }
+
     return (
         <div className="post_list" onClick={(props.onClick)}>
             <h2>{props.title}</h2>
@@ -37,6 +46,8 @@ const PostList = (props) => {
             src={props.file}
             controls
             />
+            <button onClick={()=>deletePost(props.id, window.location.reload())}>Delete</button>
+            
             {props.comment.map(comment => 
             <h5 className="post_comment">{comment.title}:  {comment.body} -{comment.user}</h5>
             )}

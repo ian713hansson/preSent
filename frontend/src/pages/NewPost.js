@@ -15,19 +15,23 @@ function NewPost () {
 
     const [formState, setFormState] = useState(initialState)
 
+    
     const handleChange = event => {
         setFormState({ ...formState, [event.target.id]: event.target.value })
     }
 
+    // const handleImageChange = event => {
+    //     setFormState({ ...formState, [event.target.files[0]]: event.target.value })
+    // }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         console.log(formState)
-
         let res = await axios.post('http://localhost:8000/api/post/create/', formState)
         console.log(res)
         setFormState(initialState)
     }
+
 
     return (
         <div className="new_post">
