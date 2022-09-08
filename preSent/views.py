@@ -60,7 +60,10 @@ def createPost(request):
     data = request.data
     
     post = Post.objects.create(
-        title=data['title']
+        title=data['title'],
+        description=data['description'],
+        image=data['image'],
+        file=data['file']
     )
     
     serializer = PostSerializer(post, many=False)
