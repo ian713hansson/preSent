@@ -18,8 +18,8 @@ urlpatterns = [
     path('daily_words/<int:pk>', views.DailyWordsDetail.as_view(), name='daily_words_detail'),
 
     # CRUD urls
-    path('post/create/', views.createPost, name='create-post'),
-    path('post/delete/', views.deletePost, name='delete-post'),
+    # path('post/create/', views.createPost, name='create-post'),
+    # path('post/delete/', views.deletePost, name='delete-post'),
     # path('post/update/<int:pk>', views.updatePost, name='update-post'),
     # path('comment/create/', views.createComment, name='create-comment')
 ]

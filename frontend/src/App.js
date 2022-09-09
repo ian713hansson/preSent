@@ -4,7 +4,7 @@ import Posts from './pages/Posts';
 import Home from './pages/Home'
 import Header from './components/Header';
 import Creator from './pages/Creator';
-import NewPost from './pages/PostForm';
+import NewPost from './pages/NewPost';
 
 
 function App() {

@@ -27,7 +27,7 @@ function NewPost () {
     const handleSubmit = async (event) => {
         event.preventDefault()
         console.log(formState)
-        let res = await axios.post('http://localhost:8000/api/post/create/', formState)
+        let res = await axios.post('http://localhost:8000/api/post/', formState)
         console.log(res)
         setFormState(initialState)
     }
@@ -40,13 +40,13 @@ function NewPost () {
                 <label htmlFor="title">Title</label>
                     <input type="text" id='title'  value={formState.title} 
                     onChange={handleChange} />
-                <label htmlFor="image">Upload Image File</label>
-                    <input type="file" id='image' value={formState.image} onChange={handleChange} />
-                <label htmlFor="audio">Upload Audio File</label>
-                    <input type="file" id='file' value={formState.file} onChange={handleChange} />
+                <label htmlFor="image">Upload Image</label>
+                    <input type="text" id='image' value={formState.image} onChange={handleChange} />
+                <label htmlFor="audio">Upload Audio</label>
+                    <input type="text" id='file' value={formState.file} onChange={handleChange} />
                 <label htmlFor="description">Describe your post</label>
                     <input id="description" value={formState.description} onChange={handleChange} />
-                <button >New Post</button>
+                    <button type="submit" >New Post</button>
             </form>
         </div>
     )

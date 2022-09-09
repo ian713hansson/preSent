@@ -42,10 +42,7 @@ const PostList = (props) => {
             <p>{props.description}</p>
             <img className="post_img" src = {props.image}/>
             {/* <h4>Posted by: {props.creator}</h4> */}
-            <ReactAudioPlayer
-            src={props.file}
-            controls
-            />
+            <iframe width="75%" height="120" src={props.file} frameborder="0" ></iframe>
             <button onClick={()=>deletePost(props.id, window.location.reload())}>Delete</button>
             
             {props.comment.map(comment => 

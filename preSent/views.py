@@ -84,29 +84,6 @@ def deletePost(request):
     serializer = PostSerializer(post, many=False)
     return Response(serializer.data)
 
-@api_view(['PUT'])
-def updatePost(request):
-
-    data = request.data
-
-    tempcomment = Post.objects.update(
-        tempcomment=data['tempcomment']
-    )
-
-    serializer = PostSerializer(tempcomment)
-    return Response(serializer.data)
 
 
-@api_view(['POST'])
-def createComment(request):
-    
-    data = request.data
-    
-    comment = Comment.objects.create(
-        title=data['title'],
-        body=data['body'],
-    )
-    
-    serializer = CommentSerializer(comment, many=False)
-    return Response(serializer.data)
 
