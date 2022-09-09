@@ -45,7 +45,7 @@
 }
 
 .post_img{
-  max-width: 500px;
+  max-width: 300px;
   height: auto;
 }
 
@@ -75,4 +75,8 @@
   border-radius: 50%;
   width: 400px;
   height: auto;
+}
+
+.media_frame{
+  padding: 10px;
 }
