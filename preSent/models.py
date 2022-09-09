@@ -28,8 +28,9 @@ class Post(models.Model):
     # creator = models.ForeignKey(Creator, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(null=True, blank=True, upload_to="images/")
-    file = models.FileField(null=True, blank=True, upload_to="media/")
+    image = models.TextField(null=True)
+    file = models.TextField(null=True)
+    
 
     def __str__(self):
         return self.title

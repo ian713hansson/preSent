@@ -19,5 +19,7 @@ urlpatterns = [
 
     # CRUD urls
     path('post/create/', views.createPost, name='create-post'),
-    path('post/delete/', views.deletePost, name='delete-post')
+    path('post/delete/', views.deletePost, name='delete-post'),
+    # path('post/update/<int:pk>', views.updatePost, name='update-post'),
+    # path('comment/create/', views.createComment, name='create-comment')
 ]

@@ -2,11 +2,8 @@ from rest_framework import serializers
 from .models import Creator, DailyWords, Post, User, Comment 
 
 class CreatorSerializer(serializers.HyperlinkedModelSerializer):
-    posts = serializers.SlugRelatedField(
-        read_only=True,
-        many=True,
-        slug_field='title'
-    )
+    
+    
     daily_words = serializers.SlugRelatedField(
         many=True,
         read_only=True,
@@ -14,7 +11,7 @@ class CreatorSerializer(serializers.HyperlinkedModelSerializer):
     )    
     class Meta:
         model = Creator
-        fields = ('id', 'name', 'location', 'about', 'email','password', 'profile_pic', 'posts', 'daily_words')
+        fields = ('id', 'name', 'location', 'about', 'email','password', 'profile_pic', 'daily_words')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
