@@ -20,9 +20,6 @@ function NewPost () {
         setFormState({ ...formState, [event.target.id]: event.target.value })
     }
 
-    // const handleImageChange = event => {
-    //     setFormState({ ...formState, [event.target.files[0]]: event.target.value })
-    // }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
