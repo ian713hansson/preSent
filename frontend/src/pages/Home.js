@@ -12,12 +12,12 @@ const Home = () => {
 
     useEffect(()=>{
         const getDailyWords = async () => {
-          let res = await axios.get('http://localhost:8000/api/daily_words/')
-          console.log(res.data)
-          setDailyWords(res.data)
+            let res = await axios.get('http://localhost:8000/api/daily_words/')
+            console.log(res.data)
+            setDailyWords(res.data)
         }
         getDailyWords()
-      }, []) 
+        }, []) 
 
     return (
         <div className="home">
