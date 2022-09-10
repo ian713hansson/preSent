@@ -25,17 +25,17 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'email', 'password', 'profile_pic', 'comment')
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
-    user = serializers.SlugRelatedField(
-        read_only=True,
-        slug_field='name'
-    )
+    # user = serializers.SlugRelatedField(
+    #     read_only=True,
+    #     slug_field='name'
+    # )
     post = serializers.SlugRelatedField(
         read_only=True,
         slug_field='title'
     )
     class Meta:
         model = Comment
-        fields = ('id', 'title', 'body', 'user', 'post')
+        fields = ('id', 'title', 'body', 'post')
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
     creator = serializers.SlugRelatedField(

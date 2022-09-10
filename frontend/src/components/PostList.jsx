@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
-
+import Comment from './CommentForm'
 
 
 
@@ -47,16 +47,17 @@ const PostList = (props) => {
             </div>
             <button onClick={()=>deletePost(props.id, window.location.reload())}>Delete</button>
             
-            {props.comment.map(comment => 
+            {/* {props.comment.map(comment => 
             <h5 className="post_comment">{comment.title}:  {comment.body} -{comment.user}</h5>
-            )}
+            )} */}
             
             <div >
-            <form className='comment_form' onSubmit={handleComment}>
+            <Comment className='comment_form' onSubmit={handleComment} onChange={handleChange} />    
+            {/* <form className='comment_form' onSubmit={handleComment}>
                 <label htmlFor='comment'>Tell us your thoughts</label>
                 <textarea id='comment' cols='40' rows='5'onChange={handleChange} value={formState.comment}></textarea>
                 <button className="comment_btn" type='comment'>Leave a Comment</button>
-            </form>
+            </form> */}
         </div>
 
         </div>
