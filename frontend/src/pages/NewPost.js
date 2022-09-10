@@ -43,7 +43,7 @@ function NewPost () {
                     <input type="text" id='file' value={formState.file} onChange={handleChange} />
                 <label htmlFor="description">Describe your post</label>
                     <input id="description" value={formState.description} onChange={handleChange} />
-                    <button type="submit" >New Post</button>
+                    <button className="post_button" type="submit" >New Post</button>
             </form>
         </div>
     )
