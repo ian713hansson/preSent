@@ -4,8 +4,6 @@ import axios from 'axios'
 import DailyWords from "../components/Daily"
 
 
-    
-
 const Home = () => {
 
     const [daily_words, setDailyWords] = useState([])
@@ -19,6 +17,8 @@ const Home = () => {
         getDailyWords()
         }, []) 
 
+        
+        
     return (
         <div className="home">
             <h1>Enjoy a space to look inward and outward</h1>
@@ -32,6 +32,7 @@ const Home = () => {
                         name={daily_words.name}
                         body={daily_words.body}
                     />
+                    
                 </div>
                 ))}
             </section>

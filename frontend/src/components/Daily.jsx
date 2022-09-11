@@ -1,6 +1,7 @@
 import React from "react"
 
 
+
 const DailyWords = (props) => {
     console.log(props)
 

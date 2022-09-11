@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import axios from "axios"
 import Comment from './CommentForm'
-
+import OmCounter from './OmCounter'
+import OmButton from "./OmButton"
 
 
 const PostList = (props) => {
@@ -36,6 +37,22 @@ const PostList = (props) => {
         
     }
 
+    const [oms, setOMS] = useState(0)
+
+    const addOM = (event) => {
+        let om = oms + 1
+        setOMS(om)
+        console.log('enlightened')
+    }
+
+    const postOM= async (id) => {
+        console.log('om', props.id, props.title)
+        await axios.put(`https://localhost:8000/api/post/${props.id}`)
+
+        console.log('post enlightened')
+    }
+
+    
     return (
         <div className="post_list" onClick={(props.onClick)}>
             <h2>{props.title}</h2>
@@ -46,18 +63,12 @@ const PostList = (props) => {
                 <iframe width="560" height="315" src={props.file} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  ></iframe>
             </div>
             <button onClick={()=>deletePost(props.id, window.location.reload())}>Delete</button>
-            
-            {/* {props.comment.map(comment => 
-            <h5 className="post_comment">{comment.title}:  {comment.body} -{comment.user}</h5>
-            )} */}
+            <OmCounter digit={oms} />
+            <OmButton addOM={addOM} onClick={()=>postOM(props.id)} />
             
             <div >
             <Comment className='comment_form' onSubmit={handleComment} onChange={handleChange} />    
-            {/* <form className='comment_form' onSubmit={handleComment}>
-                <label htmlFor='comment'>Tell us your thoughts</label>
-                <textarea id='comment' cols='40' rows='5'onChange={handleChange} value={formState.comment}></textarea>
-                <button className="comment_btn" type='comment'>Leave a Comment</button>
-            </form> */}
+        
         </div>
 
         </div>
