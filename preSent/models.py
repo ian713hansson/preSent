@@ -31,6 +31,7 @@ class Post(models.Model):
     image = models.TextField(null=True)
     file = models.TextField(null=True)
     
+    
 
     def __str__(self):
         return self.title

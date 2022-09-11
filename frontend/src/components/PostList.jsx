@@ -63,14 +63,17 @@ const PostList = (props) => {
                 <iframe width="560" height="315" src={props.file} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  ></iframe>
             </div>
             <button onClick={()=>deletePost(props.id, window.location.reload())}>Delete</button>
-            <OmCounter digit={oms} />
-            <OmButton addOM={addOM} onClick={()=>postOM(props.id)} />
             
-            <div >
-            <Comment className='comment_form' onSubmit={handleComment} onChange={handleChange} />    
-        
-        </div>
-
+            <div className='user_field'>
+                <div className="oms">
+                    <h4>Give this post an OM</h4>
+                    <OmButton addOM={addOM} onClick={()=>postOM(props.id)} />
+                    <OmCounter digit={oms} />
+                </div>
+                {/* <div className="comment" >
+                    <Comment className='comment_form' onSubmit={handleComment} onChange={handleChange} />   
+                </div> */}
+            </div>
         </div>
     )
 }

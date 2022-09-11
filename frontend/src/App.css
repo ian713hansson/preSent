@@ -118,6 +118,24 @@
 }
 
 .om{
-  width: 40px;
+  width: 60px;
   height: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.oms{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.om_digit{
+  margin-right: 40px;
+}
+
+.user_field{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
