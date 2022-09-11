@@ -46,7 +46,7 @@ const PostList = (props) => {
     }
 
     const postOM= async (id) => {
-        console.log('om', props.id, props.title)
+        console.log('om', props.id, props.om)
         await axios.put(`https://localhost:8000/api/post/${props.id}`)
 
         console.log('post enlightened')

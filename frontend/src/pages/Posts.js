@@ -27,6 +27,7 @@ function Posts () {
                         description={post.description}
                         image={post.image}
                         file={post.file}
+                        om={post.om}
                         creator={post.creator}
                         comment={post.comment}
                         />

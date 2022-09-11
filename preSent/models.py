@@ -30,6 +30,7 @@ class Post(models.Model):
     description = models.TextField()
     image = models.TextField(null=True)
     file = models.TextField(null=True)
+    om = models.IntegerField(default=0, null=True)
     
     
 
