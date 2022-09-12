@@ -8,7 +8,7 @@ class Creator(models.Model):
     about = models.TextField()
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/")
+    profile_pic = models.CharField(max_length=100, default='no pic')
 
     def __str__(self):
         return self.name
@@ -19,7 +19,6 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return self.name
