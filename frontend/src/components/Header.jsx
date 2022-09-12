@@ -7,6 +7,7 @@ const Header = () => {
         <div className='header'>
             <h1>preSent</h1>
             <h4>A Cyber Sangha for inhabitants of the fringe</h4>
+            {/* <img src='https://i.imgur.com/25pHtQy.png' /> */}
         <div className='nav_header'>
             <nav>
                 <Link className='nav_links' to="/">Home</Link>
