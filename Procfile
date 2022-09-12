@@ -1,0 +1,1 @@
+web: gunicorn preSent_django.wsgi
