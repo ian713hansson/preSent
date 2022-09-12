@@ -6,7 +6,6 @@ import Header from './components/Header';
 import Creator from './pages/Creator';
 import NewPost from './pages/NewPost';
 
-
 function App() {
   return (
     <div>
