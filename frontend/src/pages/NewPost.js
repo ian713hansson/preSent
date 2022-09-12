@@ -29,7 +29,6 @@ function NewPost () {
         setFormState(initialState)
     }
 
-
     return (
         <div className="new_post">
             <form className="post_form" onSubmit={handleSubmit}>

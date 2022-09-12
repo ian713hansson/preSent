@@ -26,8 +26,8 @@ class User(models.Model):
 
 class Post(models.Model):
     # creator = models.ForeignKey(Creator, on_delete=models.CASCADE, related_name='posts')
-    title = models.CharField(max_length=100)
-    description = models.TextField()
+    title = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
     image = models.TextField(null=True)
     file = models.TextField(null=True)
     om = models.IntegerField(default=0, null=True)

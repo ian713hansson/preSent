@@ -31,7 +31,7 @@ function Comment () {
                     onChange={handleChange} />
                 <label htmlFor="body">Tell us your thoughts</label>
                     <input type="text" id='body' value={formState.body} onChange={handleChange} />
-                <button type="submit" >New Comment</button>
+                <button  type="submit" >New Comment</button>
             </form>
         </div>
     )

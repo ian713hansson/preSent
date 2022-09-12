@@ -46,7 +46,7 @@ const PostList = (props) => {
     }
 
     const postOM= async (id) => {
-        console.log('om', props.id, props.om)
+        console.log('om', props.id, props.title)
         await axios.put(`https://localhost:8000/api/post/${props.id}`)
 
         console.log('post enlightened')
@@ -64,15 +64,16 @@ const PostList = (props) => {
             </div>
             <button onClick={()=>deletePost(props.id, window.location.reload())}>Delete</button>
             
+            
             <div className='user_field'>
                 <div className="oms">
                     <h4>Give this post an OM</h4>
-                    <OmButton addOM={addOM} onClick={()=>postOM(props.id)} />
-                    <OmCounter digit={oms} />
+                    <OmButton addOM={addOM} />
+                    <OmCounter digit={oms} onChange={()=>postOM(props.id)}/>
                 </div>
-                {/* <div className="comment" >
+                <div className="comment" >
                     <Comment className='comment_form' onSubmit={handleComment} onChange={handleChange} />   
-                </div> */}
+                </div>
             </div>
         </div>
     )
