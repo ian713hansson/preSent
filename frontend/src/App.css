@@ -11,7 +11,15 @@
   align-items: center;
   outline: 2px solid
 }
+.header_img_container{
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
 
+.header_img{
+  width:200px;
+  height:auto;
+}
 .nav_links{
   margin: 0px 50px 10px 50px;
 }
