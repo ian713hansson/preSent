@@ -9,7 +9,8 @@
 }
 
 .header {
-  background-color: rgb(244, 209, 137);
+  background-image: url('https://wallpaperaccess.com/full/2432920.jpg');
+  background-size:cover;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
